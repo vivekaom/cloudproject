@@ -113,8 +113,8 @@ SSH into the control node and follow the steps below:
 
 To set up Filebeat
 SSH into control node and follow the steps below:
--Copy the filebeat-config.yml into /etc/ansible/files
--Update filebeat-playbook.yml (in /etc/ansible/roles directory) to include installer using the following command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb
+- Copy the filebeat-config.yml into /etc/ansible/files
+- Update filebeat-playbook.yml (in /etc/ansible/roles directory) to include installer using the following command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb
 -Update the filebeat-config.yml file to add the ip address of the ElkVM machine where the following lines appear:
 
 ```
@@ -131,8 +131,8 @@ output.elasticsearch:
 
 To set up Metricbeat
 SSH into control node and follow the steps below:
--Copy the metricbeat-config.yml into /etc/ansible/files
--Update metricbeat-playbook.yml (in /etc/ansible/roles directory) to include installer using the following command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb
+- Copy the metricbeat-config.yml into /etc/ansible/files
+- Update metricbeat-playbook.yml (in /etc/ansible/roles directory) to include installer using the following command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb
 -Update the metricbeat-config.yml file to add the ip address of the ElkVM machine where the following lines appear:
 
 ```
