@@ -122,7 +122,7 @@ SSH into control node and follow the steps below:
  hosts: ["10.1.0.4:9200"]
   username: "elastic"
   password: "changeme” 
-  ```
+ 
 
  ``setup.kibana:
   host: "10.1.0.4:5601"
@@ -139,7 +139,7 @@ SSH into control node and follow the steps below:
  hosts: ["10.1.0.4:9200"]
   username: "elastic"
   password: "changeme” 
-```
+
 
  ``setup.kibana:
   host: "10.1.0.4:5601"
