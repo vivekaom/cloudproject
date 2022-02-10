@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-(Diagrams/Cloud_Project_Diagram.png)
+!(Diagrams/Cloud_Project_Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml and config file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -44,7 +44,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Web-2    | Server   | 10.0.0.8   | Linux            |
 | Web-3    | Server   | 10.0.0.12  | Linux            |
 | ElkVM    | Server   | 10.1.0.4   | Linux            |
-|Load Balaner|          |20.119.56.237|                  |
+|Load Balancer|          |20.119.56.237|                  |
 
 ### Access Policies
 
@@ -85,7 +85,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-(Diagrams/docker_ps.png)
+!(Diagrams/docker_ps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
