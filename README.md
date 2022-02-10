@@ -27,12 +27,12 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- What aspect of security do load balancers protect? What is the advantage of a jump box?_
 Load balancing protects Availability because no server gets overwhelmed with traffic. The jump box ensures that there is one point of entry for access control.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
-- _TODO: What does Filebeat watch for? Filbeat monitors logs in the specified locations.
-- _TODO: What does Metricbeat record? Metricbeat collects statistics and metrics and sends them to the specified services (Logstash and Elasticsearch)
+- What does Filebeat watch for? Filbeat monitors logs in the specified locations.
+- What does Metricbeat record? Metricbeat collects statistics and metrics and sends them to the specified services (Logstash and Elasticsearch)
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -54,7 +54,7 @@ Only the Jumpbox machine can accept connections from the Internet. Access to thi
 - 73.131.6.110
 
 Machines within the network can only be accessed by Jumpbox.
-- _TODO: Which machine did you allow to access your ELK VM? My local machine
+-Which machine did you allow to access your ELK VM? My local machine
  What was its IP address? 73.131.6.110
 
 A summary of the access policies in place can be found in the table below.
@@ -73,7 +73,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 Ansible allows you to easily configure multiple machines through one command. Playbook allows installation of software, and configuration of multiple machines simultaneously.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - install docker
 - install python
 - increase the virtual memory
@@ -98,7 +98,7 @@ ElkVM, Web-1, Web-2, and Web-3
 Beats installed were MetricBeat and FileBeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 Filebeat collects ans ships log events: ex. system.syslog are system logs
 Metricbeat collects and ships host metrics and statistics: ex. CPU usage, memory usage, inbound and outbound traffic measurements.
 
@@ -117,14 +117,16 @@ SSH into control node and follow the steps below:
 -Update filebeat-playbook.yml (in /etc/ansible/roles directory) to include installer using the following command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb
 -Update the filebeat-config.yml file to add the ip address of the ElkVM machine where the following lines appear:
 
-output.elasticsearch:
+``output.elasticsearch:
   #Array of hosts to connect to.
  hosts: ["10.1.0.4:9200"]
   username: "elastic"
   password: "changeme” 
+  ```
 
- setup.kibana:
+ ``setup.kibana:
   host: "10.1.0.4:5601"
+```
 
 To set up Metricbeat
 SSH into control node and follow the steps below:
@@ -132,11 +134,13 @@ SSH into control node and follow the steps below:
 -Update metricbeat-playbook.yml (in /etc/ansible/roles directory) to include installer using the following command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb
 -Update the metricbeat-config.yml file to add the ip address of the ElkVM machine where the following lines appear:
 
-output.elasticsearch:
+``output.elasticsearch:
   #Array of hosts to connect to.
  hosts: ["10.1.0.4:9200"]
   username: "elastic"
   password: "changeme” 
+```
 
- setup.kibana:
+ ``setup.kibana:
   host: "10.1.0.4:5601"
+```
