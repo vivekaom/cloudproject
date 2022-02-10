@@ -117,7 +117,7 @@ SSH into control node and follow the steps below:
 -Update filebeat-playbook.yml (in /etc/ansible/roles directory) to include installer using the following command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb
 -Update the filebeat-config.yml file to add the ip address of the ElkVM machine where the following lines appear:
 
-``'output.elasticsearch:
+```output.elasticsearch:
   #Array of hosts to connect to.
  hosts: ["10.1.0.4:9200"]
   username: "elastic"
