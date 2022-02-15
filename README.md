@@ -129,7 +129,7 @@ output.elasticsearch:
   host: "10.1.0.4:5601"
 ```
 Once your Filebeat is running, you will be able to access the data through Kibana. It should appear like the following:
-![verifying Filebeat in Kibana](Diagrams/filebeat_running.png)
+![verifying Filebeat in Kibana](Diagrams/filebeat_running.jpg)
 
 To set up Metricbeat
 SSH into control node and follow the steps below:
@@ -149,4 +149,4 @@ output.elasticsearch:
   host: "10.1.0.4:5601"
 ```
 Once your Metricbeat is running, you will be able to look at the perfomance metrics within Kibana. It should appear like the following:
-![verifying Metricbeat in Kibana](Diagrams/metricbeat_running.png)
+![verifying Metricbeat in Kibana](Diagrams/metricbeat_running.jpg)
