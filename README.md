@@ -55,14 +55,14 @@ Only the Jumpbox machine can accept connections from the Internet. Access to thi
 
 Machines within the network can only be accessed by Jumpbox.
 -Which machine did you allow to access your ELK VM? My local machine
- What was its IP address? 73.131.6.110
+ What was its IP address? My IP address
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | 	No               | 73.131.6.110         |
-|  ElkVM   |    No               | 73.131.6.110         |
+| Jump Box | 	No               | My Ip address         |
+|  ElkVM   |    No               | My IP address        |
 |  Web-1   |    No               | 10.0.0.4             |
 |  Web-2   |    No               | 10.0.0.4             |
 |  Web-3   |    No               | 10.0.0.4             |
@@ -128,6 +128,8 @@ output.elasticsearch:
  setup.kibana:
   host: "10.1.0.4:5601"
 ```
+Once your Filebeat is running, you will be able to access the data through Kibana. It should appear like the following:
+![verifying Filebeat in Kibana](Diagrams/filebeat_running.png)
 
 To set up Metricbeat
 SSH into control node and follow the steps below:
@@ -146,3 +148,5 @@ output.elasticsearch:
  setup.kibana:
   host: "10.1.0.4:5601"
 ```
+Once your Metricbeat is running, you will be able to look at the perfomance metrics within Kibana. It should appear like the following:
+![verifying Metricbeat in Kibana](Diagrams/metricbeat_running.png)
