@@ -80,9 +80,11 @@ The playbook implements the following tasks:
 - download and launch docker elk container
   and expose ports 5601, 9200, and 5044
   enter them in the playbook as 
-  ```5601:5601
+  ```
+     5601:5601
      9200:9200
-     5044:50441```
+     5044:50441
+     ```
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
