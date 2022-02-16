@@ -78,10 +78,11 @@ The playbook implements the following tasks:
 - install python
 - increase the virtual memory
 - download and launch docker elk container
-  and expose ports
-  5601
-  9200
-  5044
+  and expose ports 5601, 9200, and 5044
+  enter them in the playbook as 
+  ```5601:5601
+     9200:9200
+     5044:50441```
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -98,7 +99,7 @@ ElkVM, Web-1, Web-2, and Web-3
 Beats installed were MetricBeat and FileBeat
 
 These Beats allow us to collect the following information from each machine:
-- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
 Filebeat collects ans ships log events: ex. system.syslog are system logs
 Metricbeat collects and ships host metrics and statistics: ex. CPU usage, memory usage, inbound and outbound traffic measurements.
 
@@ -137,6 +138,7 @@ To set up Metricbeat
 SSH into control node and follow the steps below:
 - Copy the metricbeat-config.yml into /etc/ansible/files
 - Update metricbeat-playbook.yml (in /etc/ansible/roles directory) to include installer using the following command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb
+- 
 -Update the metricbeat-config.yml file to add the ip address of the ElkVM machine where the following lines appear:
 
 ```
