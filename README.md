@@ -110,11 +110,13 @@ SSH into the control node and follow the steps below:
 - Copy the install-elk.yml file to /etc/ansible directory.
 - Update the hosts file to include the ip addresses of the server that will be configured. 
 - Run the playbook using ansible-playbook intall-elk.yml, and navigate to http:[ipaddressofelkvm]:5601/app/kibana to check that the installation worked as expected.
+- To install the playbook, from the /etc/ansible directory run the command ```ansible-playbook install-elk.yml```
 
 To set up Filebeat
 SSH into control node and follow the steps below:
 - Copy the filebeat-config.yml into /etc/ansible/files
-- Update filebeat-playbook.yml (in /etc/ansible/roles directory) to include installer using the following command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb
+- Update filebeat-playbook.yml (in /etc/ansible/roles directory) to include installer using the following command: 
+- ```curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb```
 -Update the filebeat-config.yml file to add the ip address of the ElkVM machine where the following lines appear:
 
 ```
